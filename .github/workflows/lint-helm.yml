@@ -37,13 +37,7 @@ jobs:
   release-helm-ceres:
     runs-on: ubuntu-latest
     steps:
-      - uses: ncipollo/release-action@v1
+      - uses: softprops/action-gh-release@v1
         with:
-          artifacts: "ceres-0.1.0.tar.gz"
-  release-helm-tycho:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: ncipollo/release-action@v1
-        with:
-          artifacts: "tycho-0.1.0.tar.gz"
+          files: "ceres-0.1.0.tar.gz"
 
