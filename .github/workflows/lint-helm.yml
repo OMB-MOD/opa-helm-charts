@@ -18,4 +18,20 @@ jobs:
         uses: WyriHaximus/github-action-helm3@v2
         with:
           exec: helm lint ./tycho/
+  package-helm-tycho:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Package the tycho chart
+        uses: WyriHaximus/github-action-helm3@v2
+        with:
+          exec: helm package ./tycho/
+  package-helm-ceres:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Package the ceres chart
+        uses: WyriHaximus/github-action-helm3@v2
+        with:
+          exec: helm package ./ceres/
 
