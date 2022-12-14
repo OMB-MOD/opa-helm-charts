@@ -36,14 +36,16 @@ jobs:
           exec: helm package ./ceres/
   release-helm-ceres:
     runs-on: ubuntu-latest
-    - uses: ncipollo/release-action@v1
-        with:
-          artifacts: "ceres-0.1.0.tar.gz"
-          bodyFile: "ceres.md"
+    steps:
+      - uses: ncipollo/release-action@v1
+          with:
+            artifacts: "ceres-0.1.0.tar.gz"
+            bodyFile: "ceres.md"
   release-helm-tycho:
     runs-on: ubuntu-latest
-    - uses: ncipollo/release-action@v1
-        with:
-          artifacts: "tycho-0.1.0.tar.gz"
-          bodyFile: "tycho.md"
+    steps:
+      - uses: ncipollo/release-action@v1
+          with:
+            artifacts: "tycho-0.1.0.tar.gz"
+            bodyFile: "tycho.md"
 
