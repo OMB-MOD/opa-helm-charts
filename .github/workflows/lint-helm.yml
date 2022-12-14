@@ -1,0 +1,17 @@
+name: Lint using helm's builtin
+on:
+  push:
+jobs:
+  lint-helm-ceres:
+    steps:
+      - uses: actions/checkout@v1
+      - name: Lint ceres chart
+        uses: WyriHaximus/github-action-helm3@v2
+        with:
+          exec: helm lint ./ceres/
+      - uses: actions/checkout@v1
+      - name: Lint tycho chart
+        uses: WyriHaximus/github-action-helm3@v2
+        with:
+          exec: helm lint ./tycho/
+
