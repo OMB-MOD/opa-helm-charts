@@ -10,6 +10,9 @@ jobs:
         uses: WyriHaximus/github-action-helm3@v2
         with:
           exec: helm lint ./ceres/
+  lint-helm-tycho:
+    runs-on: ubuntu-latest
+    steps:
       - uses: actions/checkout@v1
       - name: Lint tycho chart
         uses: WyriHaximus/github-action-helm3@v2
